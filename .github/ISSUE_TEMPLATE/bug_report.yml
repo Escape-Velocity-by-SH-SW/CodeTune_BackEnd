@@ -1,0 +1,77 @@
+name: 버그 제보
+description: 재현 가능한 오류나 예상과 다른 동작을 제보합니다.
+title: "[Bug] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        문제를 빠르게 확인할 수 있도록 재현 정보와 실제 결과를 작성해 주세요.
+
+  - type: textarea
+    id: description
+    attributes:
+      label: 문제 설명
+      description: 발생한 문제를 명확하게 설명해 주세요.
+      placeholder: 어떤 문제가 발생했나요?
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: 재현 방법
+      description: 문제를 다시 발생시킬 수 있는 순서를 작성해 주세요.
+      placeholder: |
+        1. ...
+        2. ...
+        3. ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: 예상 동작
+      description: 정상이라면 어떻게 동작해야 하는지 작성해 주세요.
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: 실제 동작
+      description: 실제 결과와 오류 메시지를 작성해 주세요.
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: 버전 또는 커밋
+      description: 문제가 발생한 브랜치, 태그 또는 커밋 SHA를 작성해 주세요.
+      placeholder: main / commit SHA
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: 실행 환경
+      description: OS, Java, Docker 등 재현에 필요한 환경 정보를 작성해 주세요.
+      placeholder: macOS, Java 21, Docker Desktop 등
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: 로그 및 추가 자료
+      description: 민감 정보를 제거한 로그, 요청/응답 또는 스크린샷을 첨부해 주세요.
+      render: shell
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: 확인 사항
+      options:
+        - label: 기존 이슈에 동일한 문제가 없는지 확인했습니다.
+          required: true
+        - label: 로그와 첨부 자료에서 비밀 값과 개인정보를 제거했습니다.
+          required: true
+
